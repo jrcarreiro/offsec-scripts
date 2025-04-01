@@ -11,3 +11,4 @@ coverage/
 tmp/
 .ruby-version
 .env
+.idea

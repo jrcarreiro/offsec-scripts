@@ -1,0 +1,55 @@
+# List of sensitive keywords or regex patterns
+# Lines starting with '#' are comments
+
+# Auth / Credentials
+password
+passwd
+secret
+token
+apikey
+auth
+authorization
+credentials
+login
+jwt
+bearer
+
+# Crypto / Storage
+privatekey
+publickey
+keychain
+aes
+rsa
+base64
+encryption
+certificate
+pem
+p12
+keystore
+
+# Local storage files / paths
+\\.plist$
+\\.sqlite$
+\\.db$
+\\.log$
+\\.bak$
+Documents
+Library
+tmp
+NSUserDefaults
+
+# Common data fields
+email
+cpf
+cnpj
+phone
+address
+geolocation
+latitude
+longitude
+gps
+imei
+uuid
+deviceid
+userid
+username
