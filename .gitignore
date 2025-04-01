@@ -1,0 +1,13 @@
+.DS_Store
+*.log
+*.swp
+*.swo
+*.bak
+.bundle/
+vendor/
+*.gem
+*.rbc
+coverage/
+tmp/
+.ruby-version
+.env
