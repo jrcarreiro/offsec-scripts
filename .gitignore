@@ -1,13 +1,32 @@
+
+# macOS system files
 .DS_Store
-*.log
+
+# JetBrains IDEs (IntelliJ, AppCode, etc.)
+.idea/
+
+# Xcode
+*.xcworkspace
+*.xcuserdata
+DerivedData/
+
+# Swift Package Manager
+.build/
+
+# Ruby
+.bundle/
+vendor/
+log/
+
+# General
 *.swp
 *.swo
 *.bak
-.bundle/
-vendor/
-*.gem
-*.rbc
-coverage/
-tmp/
-.ruby-version
-.env
+*.tmp
+*~
+
+# Node/npm (in case you ever use it)
+node_modules/
+
+# VS Code
+.vscode/
