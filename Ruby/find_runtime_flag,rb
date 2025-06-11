@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+Dir.glob('/Applications/*.app') do |app_path|
+  output = `codesign -d -v "#{app_path}" 2>&1`
+  if output.include?('flags=0x0(none)')
+    executable = output.each_line.find { |line| line.include?('Executable') }
+    codedirectory = output.each_line.find { |line| line.include?('CodeDirectory') }
+    puts executable.to_s.chomp
+    puts codedirectory.to_s.chomp
+    puts
+  end
+end
+
