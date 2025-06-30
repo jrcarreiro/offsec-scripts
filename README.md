@@ -18,57 +18,69 @@ This repo isn't meant to be a polished product — it's a living toolbox that gr
 
 ---
 
+## New Script Added: APKEnum (Ruby Version)
+
+**APKEnum.rb** is a refactored and improved version of the original APKEnum tool, now written in Ruby to fit this repository’s language focus. This script automates APK reconnaissance and reverse engineering, extracting URLs, S3 buckets, public IPs, and Google Maps API keys from decompiled APK files.
+
+**Key Features:**
+- Modular, object-oriented Ruby design
+- Robust error handling
+- Skips binary files to avoid encoding errors
+- Scope filtering support
+- JSON output for easy integration
+
+**Usage:**
+```bash
+ruby Ruby/APKEnum.rb -p /path/to/app.apk [-s keyword1,keyword2]
+```
+
+**What it does:**  
+- Decompiles APKs using apktool
+- Scans only text-based files in the decompiled output
+- Extracts reconnaissance data relevant to mobile security assessments
+
 ### 📂 Structure
 
 Scripts are now organized by language for clarity and maintainability:
 
 ```
-.
 ├── Ruby/
-│   ├── Gemfile              # Ruby dependencies
+│   ├── APKEnum.rb           # APK reconnaissance and enumeration tool (NEW)
+│   ├── Gemfile
 │   ├── Gemfile.lock
-│   ├── Rakefile             # Entry point for rake tasks
-│   ├── tasks/               # Rake-based automations
+│   ├── Rakefile
+│   ├── tasks/
 │   │   └── radare2.rake
-│   └── install_r2lldb.rb    # Standalone Ruby script
-│
+│   └── install_r2lldb.rb
 ├── Swift/
-│   └── ipa_dump.swift       # Swift-based IPA analysis tool
-│
+│   └── ipa_dump.swift
 └── README.md
 ```
-
----
-
-### 🧠 Highlights
-- 💎 Ruby and 🍊 Swift — no Python here 😅
-- 🔥 Focused on practical, day-to-day use in red teaming & mobile hacking
-- 🧰 Built to be reused, extended and improved
-- 📦 Zero dependency clutter — just clean scripts and tools that work
-
----
 
 ### 🚀 Quick start
 
 **Ruby:**
-
 ```bash
-# Run a Rake task
-cd Ruby
+# Run the APKEnum script
+ruby Ruby/APKEnum.rb -p /path/to/app.apk [-s keyword1,keyword2]
+
+# Or run other Ruby scripts/tasks as before
 bundle install
 bundle exec rake radare2:r2lldb:install
-
-# Or run a pure Ruby script
 ruby Ruby/install_r2lldb.rb
 ```
 
 **Swift:**
-
 ```bash
-# Run the Swift IPA dump tool
 chmod +x Swift/ipa_dump.swift
 ./Swift/ipa_dump.swift /path/to/App.ipa
 ```
+
+Feel free to further adjust the README to match your voice or add more technical details as needed!
+
+Sources
+[1] GitHub - jrcarreiro/offsec-scripts https://github.com/jrcarreiro/offsec-scripts
+
 
 ---
 
